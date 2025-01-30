@@ -22,11 +22,10 @@ COCO_LABELS = {
 }
 VALID_LABELS = set(COCO_LABELS.keys())
 
-# Load Pre-trained Faster R-CNN Model (No Fine-Tuning)
+# Load Pre-trained Faster R-CNN Model
 def load_detection_model():
     model = torchvision.models.detection.fasterrcnn_resnet50_fpn(weights=torchvision.models.detection.FasterRCNN_ResNet50_FPN_Weights.DEFAULT)
     model.eval() 
-    # print("Loaded pre-trained Faster R-CNN model without fine-tuning.")
     return model
 
 # Detect Objects in an Image
